@@ -6,13 +6,19 @@ Bruno10b.github.io
 <button onclick="myFunction()">Click me</button>
 <script>
 function myFunction() {
-    	navigator.usb.requestDevice({ filters: [{ vendorId: 0x22B8 }] })
+	let devices = await navigator.usb.getDevices();
+	devices.forEach(device => {
+	// Add |device| to the UI.
+		console.log(device.idVendor);      // "Arduino Micro"
+		console.log(device.manufacturerName); // "Arduino LLC"
+	});
+    /*	navigator.usb.requestDevice({ filters: [{ vendorId: 0x22B8 }] })
 	.then(device => {
 	  console.log(device.productName);      // "Arduino Micro"
 	  console.log(device.manufacturerName); // "Arduino LLC"
 	})
 	.catch(error => { console.log(error); });
-
+*/
 }
 </script>
 </body>
