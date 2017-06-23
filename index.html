@@ -19,7 +19,9 @@ function myFunction() {
 	   device = selectedDevice;
 	   return device.open(); // Begin a session.
 	 })
-	.then(() => console.log(device.selectConfiguration(1))) // Select configuration #1 for the device.
+	.then(() => {console.log(device.selectConfiguration(1));
+					return device.selectConfiguration(1);
+	}) // Select configuration #1 for the device.
 	.then(() => device.claimInterface(1)) // Request exclusive control over interface #2.
 	.then(() => device.controlTransferOut({
 		requestType: 'class',
