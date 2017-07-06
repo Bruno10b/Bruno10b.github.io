@@ -1,8 +1,6 @@
-<title>Teste page GIT</title>
-<html>
-  <head>
+<head>
     <title>WebUSB Serial Sample Application</title>
-  </head>
+</head>
 
 
 <body>
@@ -17,8 +15,8 @@ var serial = {};
   };
   serial.requestPort = function() {
     const filters = [
-      { 'vendorId': 0x22B8, 'productId': 0x2E76 },
-	  //{ 'vendorId': 0x1949, 'productId': 0x0004 },
+      //{ 'vendorId': 0x22B8, 'productId': 0x2E76 },
+	  { 'vendorId': 0x1949, 'productId': 0x0004 },
     ];
     return navigator.usb.requestDevice({ 'filters': filters }).then(
       device => new serial.Port(device)
