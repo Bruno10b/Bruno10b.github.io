@@ -44,7 +44,7 @@ var serial = {};
         .then(() => this.device_.controlTransferOut({
             'requestType': 'class',
             'recipient': 'interface',
-            'request': 0x00,
+            'request': 0x01,
             'value': 0x01,
             'index': 0x01}))
         .then(() => {
@@ -56,7 +56,7 @@ var serial = {};
             'requestType': 'class',
             'recipient': 'interface',
             'request': 0x00,
-            'value': 0x00,
+            'value': 0x01,
             'index': 0x02})
         .then(() => this.device_.close());
   };
