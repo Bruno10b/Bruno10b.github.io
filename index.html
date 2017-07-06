@@ -57,7 +57,7 @@ var serial = {};
             'recipient': 'interface',
             'request': 0x22,
             'value': 0x00,
-            'index': 0x01})
+            'index': 0x02})
         .then(() => this.device_.close());
   };
   serial.Port.prototype.send = function(data) {
